@@ -43,3 +43,24 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :assets do
+  gem 'less-rails-bootstrap'
+  gem 'therubyracer'
+  gem 'twitter-bootstrap-rails'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
+group :test do
+  gem 'email_spec'
+  gem 'capybara', '~>2.0.2'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'growl'
+end
+ 
+gem 'bcrypt-ruby', '~> 3.1.2'
+
