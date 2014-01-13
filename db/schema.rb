@@ -20,4 +20,13 @@ ActiveRecord::Schema.define(version: 20140113121853) do
     t.integer  "timevalid"
   end
 
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "role"
+    t.string   "activation_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

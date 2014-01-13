@@ -1,14 +1,20 @@
-Guid::Application.routes.draw do
+EpoLogin::Application.routes.draw do
+  get "profile/show"
+  get "sessions/new"
+  get "users/new"
+  resources :users
+  resource :session
+  resource :profile
+  resource :tokens
+
  match '/generate', to: 'static_pages#generate', via: 'GET'
  match '/private', to: 'static_pages#private', via: 'GET'
  match '/profile', to: 'static_pages#userprofile', via: 'GET'
 #match '/generate', to: 'tokens#create', via: 'POST'
 
- # get "static_pages/private/:code" => "static_pages#private", :as => "private"
+  get "activate/:code" => "users#activate", :as => "activate"
+  root :to => 'users#new'
 
-
-
-  resources:tokens
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

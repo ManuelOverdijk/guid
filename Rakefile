@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Guid::Application.load_tasks
+EpoLogin::Application.load_tasks
