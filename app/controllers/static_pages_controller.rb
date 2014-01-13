@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def generate
+      auth_required
   	  @code = Token.new()
   end
 

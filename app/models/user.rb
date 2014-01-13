@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   									uniqueness: true
   before_create :create_activation_code
   after_create :send_confirmation_email
+  has_many :tokens
   
   def send_confirmation_email
     UserMailer.confirmation_email(self).deliver
