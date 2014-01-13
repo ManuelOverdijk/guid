@@ -1,20 +1,9 @@
 <h1>Generate</h1>
-<!-- <%= link_to "Generate", tokens_path(:token => @code), :method => :post%> -->
 
+<%= form_for(@code) do |f| %>
 
-<%= form_for(@user) do |f| %>
+      <%= f.label :timevalid %>
+      <%= f.text_field :timevalid %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create super secret code", class: "btn btn-large btn-primary" %>
     <% end %>

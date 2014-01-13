@@ -2,7 +2,7 @@ Guid::Application.routes.draw do
  match '/generate', to: 'static_pages#generate', via: 'GET'
  match '/private', to: 'static_pages#private', via: 'GET'
  match '/profile', to: 'static_pages#userprofile', via: 'GET'
-  match '/generate', to: 'tokens#create', via: 'POST'
+#match '/generate', to: 'tokens#create', via: 'POST'
 
  # get "static_pages/private/:code" => "static_pages#private", :as => "private"
 
