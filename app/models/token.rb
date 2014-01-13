@@ -1,3 +1,4 @@
 class Token < ActiveRecord::Base
-	#Requirements
+	validates :token, presence: true, uniqueness: true
+
 end

@@ -1,9 +1,10 @@
 Guid::Application.routes.draw do
-  get "static_pages/generate"
+ match '/generate', to: 'static_pages#generate', via: 'GET'
   get "static_pages/private"
 
   get "static_pages/private/:code" => "static_pages#private", :as => "private"
-  
+
+  resources:tokens
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
