@@ -1,8 +1,12 @@
 Guid::Application.routes.draw do
  match '/generate', to: 'static_pages#generate', via: 'GET'
-  get "static_pages/private"
+ match '/private', to: 'static_pages#private', via: 'GET'
+ match '/profile', to: 'static_pages#userprofile', via: 'GET'
+  match '/generate', to: 'tokens#create', via: 'POST'
 
-  get "static_pages/private/:code" => "static_pages#private", :as => "private"
+ # get "static_pages/private/:code" => "static_pages#private", :as => "private"
+
+
 
   resources:tokens
   # The priority is based upon order of creation: first created -> highest priority.

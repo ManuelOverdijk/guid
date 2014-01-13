@@ -2,17 +2,27 @@ class TokensController < ApplicationController
 	def new
 		@token = Token.new
 	end
+
 	def create
-		@token = Token.new(user_params)
-		if @token.save
-			redirect_to private_path
-		else
-			redirect_to generate_path
-		end
+		puts params[:code]
+		# @token = Token.new(params[:code])
+
+		# if @token.save!
+
+		# else
+		# 	render 'private'
+		# end
+
+		# #@token = Token.create(token: params[:token], valid_time: params[:token][:valid_time])
+		# if @token.save!
+		# 	redirect_to private_path(:id => @token.token)
+		# else
+		# 	redirect_to generate_path
+		# end
 	end
 
-private
-	def user_params
-		params.require(:code)
-	end
+	private
+	  def token_params
+	  	params.require(:tok)
+	  end
 end
