@@ -4,7 +4,7 @@ class TokensController < ApplicationController
 
 	def create
 		privatehash = SecureRandom.uuid();
-		@token = Token.new(timevalid: params[:token][:timevalid], token: privatehash)
+		@token = Token.new(timevalid: params[:token][:timevalid], token: privatehash, user_id: session[:user_id])
 
 		if @token.save!
 			redirect_to private_path(:id => @token.token)

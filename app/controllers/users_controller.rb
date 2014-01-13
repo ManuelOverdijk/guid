@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   	@user = User.new(:role => "agent")
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
 	  params.permit!
 
