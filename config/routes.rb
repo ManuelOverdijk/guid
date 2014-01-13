@@ -13,6 +13,7 @@ EpoLogin::Application.routes.draw do
 #match '/generate', to: 'tokens#create', via: 'POST'
 
   get "activate/:code" => "users#activate", :as => "activate"
+  get "users/:token" => "users#show", :as => "hash_url"
   root :to => 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.

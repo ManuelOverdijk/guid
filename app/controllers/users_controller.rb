@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if token_url = Token.find_by_token(params[:id])
+        @user = User.find(token_url.user_id)
+    else
+      redirect_to root_path
+    end
   end
 
   def create
