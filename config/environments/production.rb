@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 Guid::Application.configure do
-=======
-EpoLogin::Application.configure do
->>>>>>> B-master
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
