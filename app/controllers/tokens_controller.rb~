@@ -3,15 +3,10 @@ class TokensController < ApplicationController
 	end
 
 	def create
-<<<<<<< HEAD
 		privatehash = SecureRandom.uuid()
     time_to_seconds = params[:token][:timevalid] * 3600
 		@token = Token.new(timevalid: time_to_seconds, token: privatehash, 
                         user_id: session[:user_id])
-=======
-		privatehash = SecureRandom.uuid();
-		@token = Token.new(timevalid: params[:token][:timevalid], token: privatehash, user_id: session[:user_id])
->>>>>>> 61ba4260da76e4e7d6f2d42276e832863aa2de74
 
 		if @token.save!
 			redirect_to private_path(:id => @token.token)
