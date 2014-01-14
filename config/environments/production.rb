@@ -1,4 +1,4 @@
-EpoLogin::Application.configure do
+Guid::Application.configure do
 
   # Settings specified here will take precedence over those in config/application.rb.
   B-master
