@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def show
     if token_url = Token.find_by_token(params[:id])
+<<<<<<< HEAD
+      @user = User.find(token_url.user_id)
+=======
         @user = User.find(token_url.user_id)
+>>>>>>> 61ba4260da76e4e7d6f2d42276e832863aa2de74
     else
       redirect_to root_path
     end

@@ -2,9 +2,17 @@
 
 <%= form_for(@code) do |f| %>
 
+<<<<<<< HEAD
   <%= f.label :timevalid, "Time (in hours)" %>
   <br/>
-  <%= f.text_field :timevalid, :placeholder => "Enter the time in hours" %>
+  <%= f.text_field :timevalid, :placeholder => "The time your link will be valid" %>
 
   <%= f.submit "Create link", class: "btn btn-large btn-primary" %>
 <% end %>
+=======
+      <%= f.label :timevalid %>
+      <%= f.text_field :timevalid %>
+
+      <%= f.submit "Create super secret code", class: "btn btn-large btn-primary" %>
+    <% end %>
+>>>>>>> 61ba4260da76e4e7d6f2d42276e832863aa2de74
