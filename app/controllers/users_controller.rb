@@ -20,8 +20,7 @@ class UsersController < ApplicationController
 		if @user.save
 		  redirect_to new_session_path, notice: 'Sign up complete. Please check your inbox for activation email.'
 		else
-	    #render action: "new"
-      redirect_to generate_path
+	    render action: "new"
 		end
   end
 
