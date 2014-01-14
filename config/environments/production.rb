@@ -1,7 +1,7 @@
-Guid::Application.configure do
+EpoLogin::Application.configure do
 
   # Settings specified here will take precedence over those in config/application.rb.
-  B-master
+  master
   # Code is not reloaded between requests.
   config.cache_classes = true
 
