@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Guid</title>
+  <title>EpoLogin</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+  	<% if session[:user_id].nil? %>
+  	<%= link_to "Log In", new_session_path %>
+  	<% else %>
+		<%= link_to "Log Out", "/session", :method => "DELETE" %>
+		<% end %>
+    <% if flash[:notice] -%>
+      <div class = "alert alert-success">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:error] -%>
+      <div class = "alert alert-error">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+    <% if flash[:warning] -%>
+      <div class = "alert alert-warning">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= flash[:warning] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

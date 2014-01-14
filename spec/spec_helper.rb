@@ -3,6 +3,8 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'capybara/rspec'
+require 'email_spec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -40,5 +42,14 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  config.include Capybara::DSL
+  # Cleanup proces
+  config.after(:each) do
+    User.delete_all
+  end
+
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
+  config.include(UserHelper)
+
+
 end

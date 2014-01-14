@@ -1,0 +1,10 @@
+<h1>Generate</h1>
+
+<%= form_for(@code) do |f| %>
+
+  <%= f.label :timevalid, "Time (in hours)" %>
+  <br/>
+  <%= f.text_field :timevalid, :placeholder => "Enter the time in hours" %>
+
+  <%= f.submit "Create link", class: "btn btn-large btn-primary" %>
+<% end %>

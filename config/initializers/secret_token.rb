@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Guid::Application.config.secret_key_base = 'da6497f0b2e44014e33171a8f7138cc7153074fe7c81631b1c5f278845902cac1d0895e5f65ef709ae83937c5dbc189f9f94d916e07be8f5338be9b854f416c9'
+EpoLogin::Application.config.secret_key_base = '7a5c4113ce479e7b1ae0e69fa88458a169541a57aa7133be8f520339a9e72d40fdc63ce5c261ae6b0dce588daf71fb4efd7a43758a000ca5e2e0cf7a96595265'

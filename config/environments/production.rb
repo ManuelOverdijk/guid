@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 Guid::Application.configure do
+=======
+EpoLogin::Application.configure do
+>>>>>>> B-master
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+
+  config.force_ssl = true
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
