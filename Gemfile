@@ -55,7 +55,11 @@ group :development, :test do
 end
 
 group :test do
+  gem 'faker', '~> 1.2.0'
+  gem 'launchy'
   gem 'email_spec'
+  gem 'database_cleaner', '~> 1.0.1'
+  gem 'selenium-webdriver'
   gem 'capybara', '~>2.0.2'
   gem 'guard'
   gem 'guard-rspec'

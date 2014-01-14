@@ -1,24 +1,31 @@
 require 'spec_helper'
 
 describe Token do
-
-  before { @token = Token.new(token: "1f224fa8-f6f4-4e7d-9217-c402d01a21fd") }
-
-  subject { @token }
-
-  it { should respond_to(:token) }
-  it { should be_valid}
-  describe "when token is not present" do
-    before { @token.token = " " }
-    it { should_not be_valid }
+  
+  it "is invalid without token" do
+    expect(build(:token, token: nil)).to have(1).errors_on(:token)
   end
 
-  describe "when token is already taken" do
-    before do
-      token1 = @token.dup
-      token1.save
-    end
-
-    it { should_not be_valid }
+  it "is invalid withoud user_id" do
+    expect(build(:token, user_id: nil)).to have(1).errors_on(:user_id)
   end
+
+  it "is invalid without timevalid" do
+    expect(build(:token, timevalid: nil)).to have(1).errors_on(:timevalid)
+  end
+
+  it "is invalid with a duplicate token" do
+    create(:token, token: "abc", timevalid: 10)
+    token = build(:token, token: "abc", timevalid: 10)
+    expect(token).to have(1).errors_on(:token)
+  end
+
+  it "had a valid factory" do
+    expect(build(:token)).to be_valid
+  end
+
+  it "had an invalid timevalid value" do
+    expect(build(:token, timevalid: -10)).to have(1).errors_on(:timevalid)
+  end
+
 end
