@@ -18,7 +18,7 @@ class TokensController < ApplicationController
                        user_id: session[:user_id])
 
 		if @token.save!
-			redirect_to private_path(:id => @token.token)
+			redirect_to private_path(:id => privatehash)
 		else
 			redirect_to generate_path
 		end

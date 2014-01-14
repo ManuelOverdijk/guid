@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    token_url = Token.find_by_token(params[:id])
     
+    token_url = Token.find_by_token(Token.encrypt_hash(params[:id]))
     if token_url && token_url.created_at > (token_url.timevalid).hours.ago
       @user = User.find(token_url.user_id)
     else
