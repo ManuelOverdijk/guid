@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
 
   def private
   	  @code = params[:id]
-      @url = request.protocol + request.host_with_port + url_for(user_path)+ "/" + @code
+      @url = request.protocol + request.host_with_port + url_for(users_path)+ "/" + @code
   end
 
   def userprofile

@@ -1,7 +1,7 @@
 <h1>Private</h1>
-The link to visit your page is: http://localhost:3000/users/<%= @code %>
-<img src="<%= qr_code(150, "http://localhost:3000/users/#{@code}") %>" />
+The link to visit your page is: <%= @url %>
 <br />
-<%= social_share_button_tag(:url => "http://localhost:3000/profile/show" ) %>
-
+<img src="<%= qr_code(150, @url) %>" />
+<br />
+<%= social_share_button_tag("Bekijk mijn Certwell profiel ") %>
 
