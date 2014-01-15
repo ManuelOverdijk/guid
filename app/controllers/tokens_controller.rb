@@ -3,12 +3,12 @@ class TokensController < ApplicationController
 	end
 
 	def create
-		privatehash = SecureRandom.uuid()
-		puts params[:token][:timevalid]
+		# privatehash = SecureRandom.uuid()
+		puts params[:token]
 
 		#current date
-		puts DateTime.now.to_date
-		if Date.parse(params[:token][:timevalid]) < Date.today
+		# puts DateTime.now.to_date
+		# if Date.parse(params[:token][:timevalid]) < Date.today
 			#Date picked before today, raise error
 
 

@@ -1,8 +1,14 @@
 <h1>Generate</h1>
 
 <div class="well">
+<%= form_for (@code) do |f| %>
+
+  
+
   <div id="datetimepicker4" class="input-append date">
-    <input data-format="dd/MM/yyyy" type="text"></input>
+   <!--  <input id = "token_timevalid" data-format="dd/MM/yyyy" type="text"></input> -->
+   <%= text_field(:token, :datevalid, data: {format: 'dd/MM/yyyy'}) %>
+
     <span class="add-on">
       <i data-date-icon="icon-calendar">
       </i>
@@ -10,14 +16,19 @@
   </div>
 
   <div id="datetimepicker3" class="input-append">
-    <input data-format="hh:mm:ss" type="text"></input>
+  	 <%= text_field(:token, :timevalid, data: {format: 'hh:mm'}) %>
     <span class="add-on">
       <i data-time-icon="icon-time" data-date-icon="icon-calendar">
       </i>
     </span>
   </div>
-
+  <%= f.submit "Create link", class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>
+
+
+
+
 <script type="text/javascript">
   $(function() {
     $('#datetimepicker4').datetimepicker({
@@ -27,7 +38,8 @@
 </script><script type="text/javascript">
   $(function() {
     $('#datetimepicker3').datetimepicker({
-      pickDate: false
+      pickDate: false,
+      pickSeconds: false
     });
   });
 </script>
