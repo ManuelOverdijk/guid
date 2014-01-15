@@ -3,5 +3,5 @@ The link to visit your page is: <%= @url %>
 <br />
 <img src="<%= qr_code(150, @url) %>" />
 <br />
-<%= social_share_button_tag("Bekijk mijn Certwell profiel ") %>
+<%= social_share_button_tag("Bekijk mijn Certwell profiel ", :url => @url) %>
 
