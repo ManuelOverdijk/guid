@@ -14,9 +14,8 @@
 
 //= require turbolinks
 //= require jquery
-
-//= require_tree .
 //= require bootstrap-datetimepicker
+//= require locales/bootstrap-datetimepicker.nl
 
 
 
