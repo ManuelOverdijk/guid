@@ -2,5 +2,6 @@
 The link to visit your page is: http://localhost:3000/users/<%= @code %>
 <img src="<%= qr_code(150, "http://localhost:3000/users/#{@code}") %>" />
 <br />
+<%= social_share_button_tag(:url => "http://localhost:3000/profile/show" ) %>
 
 
