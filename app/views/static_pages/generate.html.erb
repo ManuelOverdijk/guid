@@ -1,12 +1,46 @@
 <h1>Generate</h1>
 
-<%= form_for(@code) do |f| %>
-<!-- <%= select_tag(:id, options_for_select([['One Week',1],['Two Weeks',2],['One Month',3]])) %> -->
+<div class="well">
+<%= form_for (@code) do |f| %>
 
+  
 
+  <div id="datetimepicker4" class="input-append date">
+   <!--  <input id = "token_timevalid" data-format="dd/MM/yyyy" type="text"></input> -->
+   <%= text_field(:token, :datevalid, data: {format: 'dd/MM/yyyy'}) %>
 
+    <span class="add-on">
+      <i data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
 
- <%= select(:token, :timevalid,[['One Week',1],['Two Weeks',2],['One Month',3]]) %>
+  <div id="datetimepicker3" class="input-append">
+  	 <%= text_field(:token, :timevalid, data: {format: 'hh:mm'}) %>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
   <%= f.submit "Create link", class: "btn btn-large btn-primary" %>
-<% end %>
+  <% end %>
+</div>
 
+
+
+
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepicker4').datetimepicker({
+      pickTime: false,
+      language: 'nl'
+    });
+  });
+</script><script type="text/javascript">
+  $(function() {
+    $('#datetimepicker3').datetimepicker({
+      pickDate: false,
+      pickSeconds: false
+    });
+  });
+</script>

@@ -6,10 +6,13 @@ class UsersController < ApplicationController
   def show
     
     token_url = Token.find_by_token(Token.encrypt_hash(params[:id]))
-    if token_url && token_url.created_at > (token_url.timevalid).hours.ago
+    if token_url && (token_url.timevalid > DateTime.now.to_i + 3600)
+      puts token_url.timevalid
+      puts DateTime.now.to_i
+      puts DateTime.now.to_time.utc
       @user = User.find(token_url.user_id)
     else
-      redirect_to root_path
+      redirect_to root_path, :flash => { :error => "Link is outdated or invalid." }
     end
   end
 
