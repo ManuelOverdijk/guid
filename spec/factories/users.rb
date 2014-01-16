@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
     email "john@example.com"
     password "secret"
-    
+    password_confirmation "secret"
     trait :no_agent do
       role "no_agent"
     end
