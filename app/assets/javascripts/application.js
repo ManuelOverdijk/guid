@@ -17,6 +17,6 @@
 //= require jquery_ujs
 //= require bootstrap-datetimepicker
 //= require locales/bootstrap-datetimepicker.nl
-
+//= require social-share-button
 
 
