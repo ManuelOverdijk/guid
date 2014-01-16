@@ -10,7 +10,6 @@ EpoLogin::Application.routes.draw do
  match '/generate', to: 'static_pages#generate', via: 'GET'
  match '/private', to: 'static_pages#private', via: 'GET'
  match '/profile', to: 'static_pages#userprofile', via: 'GET'
-#match '/generate', to: 'tokens#create', via: 'POST'
 
   get "activate/:code" => "users#activate", :as => "activate"
   root :to => 'users#new'

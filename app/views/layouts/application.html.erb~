@@ -12,7 +12,7 @@
   	<% if session[:user_id].nil? %>
   	<%= link_to "Log In", new_session_path %>
   	<% else %>
-    <%= link_to "Log out", session_path, :method => :delete %>
+    <%= link_to "Log out", delete_session_path, :method => :delete %>
 		<% end %>
     <% if flash[:notice] -%>
       <div class = "alert alert-success">

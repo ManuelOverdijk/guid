@@ -12,6 +12,7 @@
 //
 //= require turbolinks
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap-datetimepicker
 //= require_tree .
 //= require social-share-button

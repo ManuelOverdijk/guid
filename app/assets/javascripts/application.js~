@@ -14,5 +14,6 @@
 //= require jquery
 //= require bootstrap-datetimepicker
 //= require_tree .
+//= require social-share-button
 
 
