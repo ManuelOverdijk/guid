@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 
+#pagination
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', '1.3.8'
 
@@ -62,11 +66,11 @@ group :development, :test do
 end
 
 group :production, :staging do
-  gem "pg"
+ # gem "pg"
 end
 
 group :development, :test do
-  gem "sqlite3", "1.3.8", :require => "sqlite3"
+  gem "sqlite3", "1.3.7", :require => "sqlite3"
 end
 
 group :test do
@@ -81,5 +85,5 @@ group :test do
   gem 'growl'
 end
  
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2', :require => "bcrypt"
 

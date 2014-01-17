@@ -12,4 +12,10 @@ class StaticPagesController < ApplicationController
 
   def userprofile
   end
+
+  def index
+  	@static_pages = Token.paginate(page: params[:page], :per_page => 10, :order => 'created_at DESC')
+  		#@token = Token.find(:all, :order => "created_at DESC")
+  end
+
 end
