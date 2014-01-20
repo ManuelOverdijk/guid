@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       puts DateTime.now.to_i
       puts DateTime.now.to_time.utc
       @user = User.find(token_url.user_id)
-      @test = token_url
     else
       redirect_to root_path, :flash => { :error => "Link is outdated or invalid." }
     end
