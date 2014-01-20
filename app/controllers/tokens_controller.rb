@@ -11,6 +11,9 @@ class TokensController < ApplicationController
 		dag, maand, jaar = params[:token][:datevalid].split('/')
 		uren, minuten = params[:token][:timevalid].split(':')
 		input = "#{jaar}-#{maand}-#{dag} #{uren}:#{minuten}:00"
+
+		#datestamp = params[:token][:datevalid] + " " + params[:token][:timevalid]
+		#puts datestamp
 		@token = Token.new(timevalid: DateTime.parse(input), token: privatehash, 
                     user_id: session[:user_id]) 
 

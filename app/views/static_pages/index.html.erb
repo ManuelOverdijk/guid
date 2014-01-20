@@ -27,7 +27,7 @@
   		<%= token.user_id %> |
   	</span>
   	<span class ='timevalid'>
-  		<%= token.timevalid %> |
+  		<%= Time.at(token.timevalid).utc.to_datetime %> |
   	</span>
   	<span class="content">
   		<%= token.token %> |
@@ -38,7 +38,7 @@
   	</span>
 
   	<span class="content">
-  		<% link_to "Delete" %>
+  		 <% link_to "Delete", tokens_delete(token.user_id) %>
   	</span>
 
 
