@@ -1,0 +1,50 @@
+<h1>Show all Tokens</h1>
+
+<ul class="tokens">
+
+<%= will_paginate %>
+
+<li>
+  	<span class ='userid'>
+  	User id |
+  	</span>
+  	<span class ='timevalid'>
+  	Valid until |
+  	</span>
+  	<span class="content">
+  		Private hash |
+  	</span>
+
+  	<span class="timestamp">
+    Created at
+  	</span>
+	</li>
+
+<% @static_pages.each do |token| %>
+
+  	<li>
+  	<span class ='userid'>
+  		<%= token.user_id %> |
+  	</span>
+  	<span class ='timevalid'>
+  		<%= Time.at(token.timevalid).utc.to_datetime %> |
+  	</span>
+  	<span class="content">
+  		<%= token.token %> |
+  	</span>
+
+  	<span class="timestamp">
+    	Created <%= time_ago_in_words(token.created_at) %> ago |
+  	</span>
+
+  	<span class="content">
+  		 <!-- <% link_to "Delete", tokens_delete(token.user_id) %> -->
+  	</span>
+
+
+	</li>
+  <% end %>
+
+	<%= will_paginate %>
+
+</ul>
