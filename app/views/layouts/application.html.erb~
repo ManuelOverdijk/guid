@@ -5,9 +5,19 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+    <script type="text/JavaScript">
+      function timedRefresh(timeoutPeriod) {
+        if(window.location.href.indexOf("new") < 0) { 
+          if(window.location.href.indexOf("users") >= 0){ 
+            setTimeout("location.reload(true);",timeoutPeriod);
+          }
+        }
+      }
+    </script>
 </head>
 
-<body>
+<body onload="JavaScript:timedRefresh(60000);">
 
   <div class="container">
   	<% if session[:user_id].nil? %>
