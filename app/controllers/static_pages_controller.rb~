@@ -6,21 +6,24 @@ class StaticPagesController < ApplicationController
 
   def private
   	  @code = params[:id]
-
-  	  # #check if token is valid
-  	  # if @found_token = Token.find_by_token(@code)
-	  	 #  @timevalid = @found_token.timevalid
-	  	 # if (Time.now - @found_token.created_at) < @timevalid
-     #        @user_id = @found_token.user_id
-	  	 #  		@test = @found_token.created_at.to_s
-     #        redirect_to user_path(@user_id)
-	  	 #  else
-	  	 #  		@test = "not valid"
-	  	 #  # 	 	redirect_to private_path
-	  	 #  end
-	    # end
+  	  @url = request.protocol + request.host_with_port + url_for(users_path)+ "/" + @code
   end
 
   def userprofile
   end
+
+  def index
+  	@static_pages = Token.paginate(page: params[:page], :per_page => 10, :order => 'created_at DESC')
+  end
+
+  def clean_database
+    Token.where("timevalid < ?", DateTime.now.to_i + 3600).each do |token|
+      token.destroy
+    end
+  end
+
+  def delete
+
+  end
+
 end

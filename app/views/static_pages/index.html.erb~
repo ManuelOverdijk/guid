@@ -1,5 +1,6 @@
 <h1>Show all Tokens</h1>
 
+<%= button_to "Delete expired tokens", { :controller => "tokens", :action => "clean_database"} %>
 
 <ul class="tokens">
 

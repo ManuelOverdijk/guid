@@ -3,6 +3,8 @@ require 'base64'
 require 'uri'
 
 class Token < ActiveRecord::Base
+  attr_encrypted :token, :key => 'a secret key'
+
 	validates :token, presence: true, uniqueness: true
 	validates :timevalid, presence: true
 	validates :user_id, presence:true 

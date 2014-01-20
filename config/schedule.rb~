@@ -1,0 +1,3 @@
+every 3.minutes do
+  rake "db:delete_old_tokens"
+end

@@ -13,6 +13,7 @@ EpoLogin::Application.routes.draw do
  match '/tokens/delete', to: 'static_pages#delete', via: 'GET'
  match '/private', to: 'static_pages#private', via: 'GET'
  match '/profile', to: 'static_pages#userprofile', via: 'GET'
+#match '/generate', to: 'tokens#create', via: 'POST'
 
   get "activate/:code" => "users#activate", :as => "activate"
   get "users/:token" => "users#show", :as => "hash_url"

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    token_url = Token.find_by_token(Token.encrypt_hash(params[:id]))
+    token_url = Token.find_by_token((params[:id]))
     if token_url && (token_url.timevalid > DateTime.now.to_i + 3600)
       puts token_url.timevalid
       puts DateTime.now.to_i
