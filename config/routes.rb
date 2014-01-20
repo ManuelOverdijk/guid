@@ -8,6 +8,8 @@ EpoLogin::Application.routes.draw do
   resource :tokens
  
  match '/generate', to: 'static_pages#generate', via: 'GET'
+ match '/tokens/index', to: 'static_pages#index', via: 'GET'
+ match '/tokens/delete', to: 'static_pages#delete', via: 'GET'
  match '/private', to: 'static_pages#private', via: 'GET'
  match '/profile', to: 'static_pages#userprofile', via: 'GET'
 #match '/generate', to: 'tokens#create', via: 'POST'
