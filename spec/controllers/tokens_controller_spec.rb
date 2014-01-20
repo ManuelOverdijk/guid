@@ -3,7 +3,6 @@ require 'spec_helper'
 describe TokensController do
 
 	describe 'POST #create' do
-
 		describe "with valid attributes" do
 			it "saves the generated string in the db" do
 				expect{
