@@ -39,7 +39,8 @@
   	</span>
 
   	<span class="content">
-  		 
+      <% @token_hash = token.token %>
+  		 <%= link_to 'Delete', tokens_path(@token_hash), method: :delete, data: { confirm: 'Are you sure?'} %>
   	</span>
 
 

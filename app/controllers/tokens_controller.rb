@@ -33,5 +33,11 @@ class TokensController < ApplicationController
       token.destroy
     end
   end
+
+	def destroy
+		puts params
+		Token.where(Token.token = @token_hash).destroy
+		redirect_to(tokens_url)
+	end
 end
 

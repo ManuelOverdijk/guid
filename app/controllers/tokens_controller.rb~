@@ -9,7 +9,6 @@ class TokensController < ApplicationController
     if params[:token][:datevalid].nil? ||params[:token][:timevalid]
       redirect_to generate_path, :flash => { :warning => "Please pick a date and time" }
     else
-    
 		  privatehash = SecureRandom.uuid()
 		  dag, maand, jaar = params[:token][:datevalid].split('/')
 		  uren, minuten = params[:token][:timevalid].split(':')
@@ -34,5 +33,11 @@ class TokensController < ApplicationController
       token.destroy
     end
   end
+
+	def destroy
+		puts params
+		Token.where(Token.token = @token_hash).destroy
+		redirect_to(tokens_url)
+	end
 end
 
